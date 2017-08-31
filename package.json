@@ -8,9 +8,5 @@
     },
     "repository": "github:mpt0/node-delayed-promise",
     "author": "Max J. Polster",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/mpt0/node-delayed-promise/issues"
-    },
-    "homepage": "https://github.com/mpt0/node-delayed-promise#readme"
+    "license": "MIT"
 }
