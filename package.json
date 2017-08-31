@@ -1,10 +1,10 @@
 {
     "name": "delayed-promise",
     "version": "1.0.0",
-    "description": "A promise that allows later catching of rejections.",
+    "description": "Utility for delayed promise rejection handling",
     "main": "index.js",
     "scripts": {
-        "test": "node test"    
+        "test": "node test"
     },
     "repository": "github:mpt0/node-delayed-promise",
     "author": "Max J. Polster",
