@@ -1,10 +1,10 @@
 # delayed-promise
 
-> [![Travis](https://img.shields.io/travis/mpt0/node-delayed-promise.svg)]()
-> [![npm](https://img.shields.io/npm/v/delayed-promise.svg)]()
-> [![npm](https://img.shields.io/npm/l/delayed-promise.svg)]()
->
-> Utility for delayed promise rejection handling
+[![Travis](https://img.shields.io/travis/mpt0/node-delayed-promise.svg)]()
+[![npm](https://img.shields.io/npm/v/delayed-promise.svg)]()
+[![npm](https://img.shields.io/npm/l/delayed-promise.svg)]()
+
+Utility for delayed promise rejection handling
 
 <br/>
 
