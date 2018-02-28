@@ -5,7 +5,8 @@
     "main": "index.js",
     "scripts": {
         "test": "xo && ava",
-        "test:watch": "ava --watch --verbose"
+        "test:watch": "ava --watch --verbose",
+        "prepack": "npm test"
     },
     "repository": "github:mpt0/node-delayed-promise",
     "author": "Max J. Polster",
