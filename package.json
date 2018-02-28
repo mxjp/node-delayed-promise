@@ -4,9 +4,14 @@
     "description": "Utility for delayed promise rejection handling",
     "main": "index.js",
     "scripts": {
-        "test": "node test"
+        "test": "xo && ava",
+        "test:watch": "ava --watch --verbose"
     },
     "repository": "github:mpt0/node-delayed-promise",
     "author": "Max J. Polster",
-    "license": "MIT"
+    "license": "MIT",
+    "devDependencies": {
+        "ava": "^0.25.0",
+        "xo": "^0.20.3"
+    }
 }

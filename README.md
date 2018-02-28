@@ -21,23 +21,36 @@ npm install delayed-promise
 
 ## Usage
 ```js
-const delay = require('delayed-promise');
+const wrap = require('delayed-promise');
 
 async function example() {
-
 	// Wrap a promise to retrieve it's state later:
-	let delayedPromise = delay(getPromise());
+	const unwrap = wrap(promise);
 
 	// ...Other async code...
 
 	// Unwrap the promise & retrieve it's state:
-	await delayedPromise();
+	await unwrap();
 }
 ```
+
+#### wrap(value)
+Wraps a promise or a value to store it's state in the back.
++ value `<any>` - If a promise, it will be wrapped, if a value, the unwrap function will return a promise that resolves to this value.
++ returns `<function>` - The unwrapping function as described below.
+
+#### unwrap()
+Returns a promise that,
++ resolves when the wrapped promise resolves.
++ rejects when the wrapped promise rejects.
++ resolves to a value if the value passed to `wrap(..)` was not a promise.
 
 <br/>
 
 
 
 ## Running tests
-In the package directory, type: `npm test`
+```bash
+npm install
+npm test
+```

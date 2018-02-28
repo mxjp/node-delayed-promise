@@ -1,33 +1,22 @@
 'use strict';
 
-const assert = require('assert');
+const test = require('ava');
 const delayPromise = require('.');
 
-function wait(ms) {
-	return new Promise(r => setTimeout(r, ms));
-}
+test('resolving promise', async t => {
+	t.is(await delayPromise(Promise.resolve(42))(), 42);
+});
 
-async function waitAndThrow(ms) {
-	await wait(ms);
-	throw 'some error';
-}
+test('rejecting promise', async t => {
+	await t.throws(delayPromise(Promise.reject(new Error('test')))(), 'test');
+});
 
-async function test() {
-	let resolving = delayPromise(wait(100));
-	await wait(200);
-	await resolving();
+test('rejecting delayed', async t => {
+	const unwrap = delayPromise(Promise.reject(new Error('test')));
+	await new Promise(resolve => setTimeout(resolve, 50));
+	await t.throws(unwrap(), 'test');
+});
 
-	try {
-		let rejecting = delayPromise(waitAndThrow(100));
-		await wait(200);
-		await rejecting();
-		throw new Error('Did not reject.');
-	} catch(err) {
-		assert(err === 'some error');
-	}
-}
-
-test().catch(err => {
-	console.error(err);
-	process.exit(1);
+test('non promise value', async t => {
+	t.is(await delayPromise(7)(), 7);
 });
